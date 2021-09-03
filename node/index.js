@@ -4,9 +4,10 @@ const port = 1000;
 const mysql = require('mysql');
 let connection = mysql.createConnection({
     host: 'localhost',
-    user: 'admin',
-    password: 'admin',
-    database: 'node'
+    // port: 3306,
+    user: 'root',
+    password: 'newpassword',
+    database: 'test'
 });
 connection.connect(function(err) {
     if (err) {
@@ -18,9 +19,9 @@ connection.connect(function(err) {
 app.listen(port, () => {
     console.log('listing to port....',port);
 });
-var sql='SELECT * FROM users';
+/* var sql='SELECT * FROM users';
 connection.query(sql, function (err, data, fields) {
     if (err) throw err;
     // res.render('user-list', { title: 'User List', userData: data});
     console.log(data);
-  });
+  }); */
